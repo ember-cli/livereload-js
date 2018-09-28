@@ -526,7 +526,7 @@
       if ((src = element.src) && (m = src.match(/^[^:]+:\/\/(.*)\/z?livereload\.js(?:\?(.*))?$/))) {
         options = new Options();
         options.https = src.indexOf("https") === 0;
-        if (mm = m[1].match(/^([^\/:]+)(?::(\d+))?$/)) {
+        if (mm = m[1].match(/^([^\/:]+)(?::(\d+))?(\/+.*)?$/)) {
           options.host = mm[1];
           if (mm[2]) {
             options.port = parseInt(mm[2], 10);
